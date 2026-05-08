@@ -3,109 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReliefCore Foundation | Donation Management</title>
+    <title>ReliefCore Foundation - Dashboard</title>
     <link rel="stylesheet" href="donation.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <aside class="sidebar">
-        <div class="logo-container">
-            <!-- Updated logo structure for color matching -->
-            <h1 class="logo-main"><span class="relief-text">RELIEF</span><span class="core-text">CORE</span></h1>
-            <p class="logo-sub">FOUNDATION</p>
-        </div>
-
-        <div class="donor-id-card">
-            <label class="label-tiny">DONOR ID</label>
-            <div class="id-number">#RG-8829-X-2024</div>
-            <div class="donor-identity">
-                <span class="name">Meherunnesa Setu</span>
-                <span class="status">VERIFIED PLATINUM DONOR</span>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="logo-section">
+                <h1>RELIEF<span>CORE</span></h1>
+                <p>FOUNDATION</p>
             </div>
-        </div>
 
-        <nav class="side-nav">
-            <ul>
-                <li>DASHBOARD</li>
-                <li class="active">DONATIONS</li>
-                <li>TRACKING</li>
-                <li>DONOR ID</li>
-                <li>ADMIN SUPPORT</li>
-            </ul>
-        </nav>
+            <div class="donor-card">
+                <p class="label-tiny">DONOR ID</p>
+                <h3 class="donor-id-text">#RG-8829-X-2024</h3>
+                <h2 class="donor-name">Meherunnesa Setu</h2>
+                <p class="label-tiny muted">VERIFIED PLATINUM DONOR</p>
+            </div>
 
-        <div class="sidebar-footer">
+            <nav class="nav-menu">
+                <a href="#">DASHBOARD</a>
+                <a href="#" class="active">DONATIONS</a>
+                <a href="#">TRACKING</a>
+                <a href="#">DONOR ID</a>
+                <a href="#">ADMIN SUPPORT</a>
+            </nav>
+
             <button class="hero-button">BECOME MONTHLY HERO</button>
-            <div class="sign-out">SECURE SIGN OUT</div>
-        </div>
-    </aside>
 
-    <main class="dashboard-container">
-        <header class="main-header">
-            <h1 class="title">Donation Management</h1>
-            <p class="subtitle">FISCAL RESPONSIBILITY & ASSET ALLOCATION</p>
-        </header>
+            <div class="logout-section">
+                <a href="#" class="logout-link">logout; <span>SECURE SIGN OUT</span></a>
+            </div>
+        </aside>
 
-        <div class="content-grid">
-            <section class="ui-card">
-                <div class="card-top">
-                    <h2 class="card-heading">Initiate Support</h2>
-                    <div class="toggle-pill">
-                        <span class="pill-active">MONEY</span>
-                        <span class="pill-inactive">SUPPLIES</span>
+        <main class="main-content">
+            
+            <header class="top-meta">
+                <div class="breadcrumb">Operations / <span>Donations</span></div>
+                <div class="live-status">LIVE: UTC-8</div>
+                <div class="session-timer">
+                    <p>ACTIVE SESSION</p>
+                    <span>04:12:33</span>
+                    <div class="profile-icon">MS</div>
+                </div>
+            </header>
+
+            <section class="page-heading">
+                <h1>Donation Management</h1>
+                <p>FISCAL RESPONSIBILITY & ASSET ALLOCATION</p>
+            </section>
+
+            <div class="donation-grid">
+                <div class="card initiate-card">
+                    <div class="card-header">
+                        <h2>Initiate Support</h2>
+                        <div class="toggle-switch">
+                            <span class="active">MONEY</span>
+                            <span>SUPPLIES</span>
+                        </div>
+                    </div>
+                    <div class="amount-presets">
+                        <div class="preset-box">$50</div>
+                        <div class="preset-box">$100</div>
+                        <div class="preset-box">$500</div>
+                        <div class="preset-box">CUSTOM</div>
+                    </div>
+                    <div class="amount-input">
+                        <span>$</span> SPECIFIC AMOUNT
+                    </div>
+                    <button class="finalize-btn">FINALIZE TRANSACTION</button>
+                </div>
+
+                <div class="card audit-card">
+                    <div class="card-header">
+                        <p class="label-tiny">AUDIT TRAIL</p>
+                        <button class="secured-btn">SECURED RECORDS</button>
+                    </div>
+                    <div class="audit-labels">
+                        <span>EXECUTION DATE</span>
+                        <span>INVENTORY / FUND</span>
+                        <span>ALLOCATION CERTIFICATE</span>
+                    </div>
+                    <div class="audit-row">
+                        <span class="audit-date">2024-04-12</span>
+                        <div class="fund-badge">
+                            <div class="fund-icon">$</div>
+                            <div>
+                                <p>Monetary Fund</p>
+                                <small>ID: RG-1209-XQ</small>
+                            </div>
+                        </div>
+                        <div class="audit-valuation">
+                            $1,200.00 <span class="download-icon">↓</span>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="preset-grid">
-                    <div class="preset-item">$50</div>
-                    <div class="preset-item">$100</div>
-                    <div class="preset-item">$500</div>
-                    <div class="preset-item">CUSTOM</div>
+            <section class="archive-section">
+                <header class="archive-header">
+                    <div>
+                        <h1 class="serif-title">Contribution Archive</h1>
+                        <p class="label-tiny gold">VERIFIED TRANSACTION DISCOVERY</p>
+                    </div>
+                    <div class="node-counter">
+                        <p>TOTAL NODES</p>
+                        <span>5</span>
+                    </div>
+                </header>
+
+                <div class="card table-card">
+                    <div class="table-controls">
+                        <div class="search-bar">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" placeholder="FILTER BY TRANSACTION ID...">
+                        </div>
+                        <div class="toggle-switch small">
+                            <span class="active">ALL</span>
+                            <span>MONETARY</span>
+                            <span>SUPPLIES</span>
+                        </div>
+                    </div>
+
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>SERIAL REFERENCE</th>
+                                <th>ASSET CLASS</th>
+                                <th>ALLOCATION NODE</th>
+                                <th>TIMESTAMP</th>
+                                <th>VALUATION</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="muted">RG-1209-XQ</td>
+                                <td><span class="badge gold">MONETARY</span></td>
+                                <td>MONETARY FUND</td>
+                                <td class="muted">2024-04-12</td>
+                                <td class="gold-val">$1,200.00</td>
+                                <td class="discover">DISCOVER</td>
+                            </tr>
+                            <tr>
+                                <td class="muted">RG-1105-AB</td>
+                                <td><span class="badge gold">MONETARY</span></td>
+                                <td>EDUCATION FUND</td>
+                                <td class="muted">2024-03-28</td>
+                                <td class="gold-val">$500.00</td>
+                                <td class="discover">DISCOVER</td>
+                            </tr>
+                            <tr>
+                                <td class="muted">RG-1092-KC</td>
+                                <td><span class="badge gray">SUPPLIES</span></td>
+                                <td>MEDICAL SUPPLIES</td>
+                                <td class="muted">2024-03-15</td>
+                                <td class="gold-val">$850.00</td>
+                                <td class="discover">DISCOVER</td>
+                            </tr>
+                            <tr>
+                                <td class="muted">RG-1045-LL</td>
+                                <td><span class="badge gold">MONETARY</span></td>
+                                <td>EMERGENCY RELIEF</td>
+                                <td class="muted">2024-02-10</td>
+                                <td class="gold-val">$2,500.00</td>
+                                <td class="discover">DISCOVER</td>
+                            </tr>
+                            <tr>
+                                <td class="muted">RG-0988-MM</td>
+                                <td><span class="badge gray">SUPPLIES</span></td>
+                                <td>FOOD DISTRIBUTION</td>
+                                <td class="muted">2024-01-20</td>
+                                <td class="gold-val">$300.00</td>
+                                <td class="discover">DISCOVER</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="table-footer">
+                        <div class="yield-text">Session Yield: <span>$5,350.00</span></div>
+                        <div class="encryption-status">
+                            Node Encryption: <span class="pulse">VERIFIED PULSE</span>
+                        </div>
+                        <button class="vault-btn">Generate Vault Record</button>
+                    </div>
                 </div>
-
-                <div class="input-area">
-                    <span class="currency-symbol">$</span>
-                    <span class="placeholder-text">SPECIFIC AMOUNT</span>
-                </div>
-
-                <button class="action-button">FINALIZE TRANSACTION</button>
             </section>
 
-            <section class="ui-card">
-                <div class="card-top">
-                    <h3 class="audit-heading">AUDIT TRAIL</h3>
-                    <div class="badge-secured">SECURED RECORDS</div>
-                </div>
+            <footer class="system-footer">
+                <p>SYSTEM STATUS: ALL NODES OPERATIONAL</p>
+                <p>© 2024 RELIEFCORE PREMIUM SYSTEMS | END-TO-END ENCRYPTED</p>
+            </footer>
 
-                <table class="audit-table">
-                    <thead>
-                        <tr>
-                            <th>EXECUTION DATE</th>
-                            <th>INVENTORY / FUND</th>
-                            <th>ALLOCATION</th>
-                            <th>CERTIFICATE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2024-04-12</td>
-                            <td>
-                                <div class="table-item">
-                                    <div class="item-icon">$</div>
-                                    <div class="item-meta">
-                                        <strong>Monetary Fund</strong>
-                                        <small>ID: RG-1209-XQ</small>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><span class="highlight">$1,200.00</span></td>
-                            <td class="download-cell">⤓</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </div>
-    </main>
+        </main>
+    </div>
+
 </body>
 </html>
