@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supply Stock Monitor | Relief Ops</title>
+  <link rel="stylesheet" href="/css/supply-monitor.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">🛡</div>
+      <h2>RELIEF OPS</h2>
+    </div>
+
+    <div class="role-label">ADMINISTRATOR</div>
+
+    <nav class="side-nav">
+      <a href="admin-dashboard.html">▦ Dashboard</a>
+      <a href="camp-managers.html">👥 Camp Managers</a>
+      <a href="camp-locations.html">📍 Camps</a>
+      <a href="supply-monitor.html" class="active">📦 Supply Monitor</a>
+      <a href="alerts.html">⚠ Alerts</a>
+      <a href="reports.html">▤ Reports</a>
+      <a href="chat.html">□ Chat</a>
+    </nav>
+
+    <a href="login.html" class="signout">↪ Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <header class="page-header">
+      <h1>Supply Stock Monitor</h1>
+      <p>Track supply levels across all camps</p>
+    </header>
+
+    <section class="table-card light-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th>Camp</th>
+            <th>Quantity</th>
+            <th>Min Required</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody id="supplyStockTable">
+          <!-- Dynamic supply stock data will be loaded here from database -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
