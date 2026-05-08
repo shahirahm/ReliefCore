@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volunteer Hub</title>
+  <link rel="stylesheet" href="../css/camp-manager.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="camp-dashboard.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/></svg>
+        </span>
+        <span class="brand-text">RELIEF OPS</span>
+      </a>
+
+      <div class="sidebar-title">Camp Manager</div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="camp-dashboard.html">Dashboard</a>
+        <a class="nav-link" href="camp-families.html">Families</a>
+        <a class="nav-link" href="camp-stock.html">Stock</a>
+        <a class="nav-link active" href="camp-volunteers.html">Volunteers</a>
+        <a class="nav-link" href="camp-distribution.html">Distribution</a>
+        <a class="nav-link" href="camp-chat.html">Chat</a>
+      </nav>
+
+      <div class="signout">
+        <a class="nav-link" href="#">Sign Out</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="main-inner">
+        <header class="page-header">
+          <div>
+            <h1 class="page-title">Volunteer Hub</h1>
+            <p class="page-subtitle">Manage volunteers, hours, skills, and recent activity.</p>
+          </div>
+        </header>
+
+        <section class="grid stats-grid">
+          <div class="card stat-card compact">
+            <div>
+              <div class="stat-label">Total Volunteers</div>
+              <div class="stat-value"></div>
+            </div>
+          </div>
+
+          <div class="card stat-card compact">
+            <div>
+              <div class="stat-label">Total Hours</div>
+              <div class="stat-value"></div>
+            </div>
+          </div>
+
+          <div class="card stat-card compact">
+            <div>
+              <div class="stat-label">Opportunities</div>
+              <div class="stat-value"></div>
+            </div>
+          </div>
+
+          <div class="card stat-card compact">
+            <div>
+              <div class="stat-label">Avg Hours / Volunteer</div>
+              <div class="stat-value"></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="content-stack">
+          <section class="panel">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Monthly Volunteer Hours</h2>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="chart-placeholder">Chart area</div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2 class="panel-title">Volunteers by Category</h2>
+            </div>
+            <div class="panel-body">
+              <div class="chart-placeholder">Chart area</div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2 class="panel-title">Recent Volunteer Activity</h2>
+            </div>
+            <div class="panel-body">
+              <div class="empty-state">No volunteer activity found.</div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

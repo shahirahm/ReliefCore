@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aid Distribution Logs</title>
+  <link rel="stylesheet" href="../css/camp-manager.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="camp-dashboard.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/></svg>
+        </span>
+        <span class="brand-text">RELIEF OPS</span>
+      </a>
+
+      <div class="sidebar-title">Camp Manager</div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="camp-dashboard.html">Dashboard</a>
+        <a class="nav-link" href="camp-families.html">Families</a>
+        <a class="nav-link" href="camp-stock.html">Stock</a>
+        <a class="nav-link" href="camp-volunteers.html">Volunteers</a>
+        <a class="nav-link active" href="camp-distribution.html">Distribution</a>
+        <a class="nav-link" href="camp-chat.html">Chat</a>
+      </nav>
+
+      <div class="signout">
+        <a class="nav-link" href="#">Sign Out</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="main-inner">
+        <header class="page-header">
+          <div>
+            <h1 class="page-title">Aid Distribution Logs</h1>
+            <p class="page-subtitle">Track all aid distributions across camps.</p>
+          </div>
+
+          <button class="btn btn-red">+ Log Distribution</button>
+        </header>
+
+        <section class="panel table-card">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Date / Time</th>
+                  <th>Camp</th>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Recipient</th>
+                  <th>Volunteer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Database rows will be inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

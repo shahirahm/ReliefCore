@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camp Manager Dashboard</title>
+  <link rel="stylesheet" href="../css/camp-manager.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="camp-dashboard.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/></svg>
+        </span>
+        <span class="brand-text">RELIEF OPS</span>
+      </a>
+
+      <div class="sidebar-title">Camp Manager</div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-link active" href="camp-dashboard.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a class="nav-link" href="camp-families.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Families
+        </a>
+        <a class="nav-link" href="camp-stock.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7l8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          Stock
+        </a>
+        <a class="nav-link" href="camp-volunteers.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+          Volunteers
+        </a>
+        <a class="nav-link" href="camp-distribution.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+          Distribution
+        </a>
+        <a class="nav-link" href="camp-chat.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+          Chat
+        </a>
+      </nav>
+
+      <div class="signout">
+        <a class="nav-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+          Sign Out
+        </a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="main-inner">
+        <header class="page-header">
+          <div>
+            <h1 class="page-title">Camp Operations</h1>
+            <p class="page-subtitle">Manage affected families, volunteers, stock, and relief distribution.</p>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              Register Family
+            </button>
+          </div>
+        </header>
+
+        <section class="grid stats-grid">
+          <div class="card stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <div class="stat-value"></div>
+              <div class="stat-label">Families</div>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+            </div>
+            <div>
+              <div class="stat-value"></div>
+              <div class="stat-label">Volunteers</div>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div>
+              <div class="stat-value"></div>
+              <div class="stat-label">Supply Units</div>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            </div>
+            <div>
+              <div class="stat-value"></div>
+              <div class="stat-label">Distributions</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h2 class="panel-title">Registered Families</h2>
+              <a href="camp-families.html">View All</a>
+            </div>
+            <div class="panel-body">
+              <div class="empty-state">No family records to show.</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h2 class="panel-title">Stock Levels</h2>
+              <span class="badge live">Live</span>
+            </div>
+            <div class="panel-body">
+              <div class="progress-list">
+                <div class="progress-item">
+                  <div class="progress-meta"><span>Rice</span><span></span></div>
+                  <div class="progress-track"><div class="progress-fill"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span>Water Bottles</span><span></span></div>
+                  <div class="progress-track"><div class="progress-fill"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span>Blankets</span><span></span></div>
+                  <div class="progress-track"><div class="progress-fill"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span>First Aid Kits</span><span></span></div>
+                  <div class="progress-track"><div class="progress-fill"></div></div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-meta"><span>Tarpaulin</span><span></span></div>
+                  <div class="progress-track"><div class="progress-fill"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

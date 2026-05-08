@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camp Chat</title>
+  <link rel="stylesheet" href="../css/camp-manager.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="camp-dashboard.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/></svg>
+        </span>
+        <span class="brand-text">RELIEF OPS</span>
+      </a>
+
+      <div class="sidebar-title">Camp Manager</div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="camp-dashboard.html">Dashboard</a>
+        <a class="nav-link" href="camp-families.html">Families</a>
+        <a class="nav-link" href="camp-stock.html">Stock</a>
+        <a class="nav-link" href="camp-volunteers.html">Volunteers</a>
+        <a class="nav-link" href="camp-distribution.html">Distribution</a>
+        <a class="nav-link active" href="camp-chat.html">Chat</a>
+      </nav>
+
+      <div class="signout">
+        <a class="nav-link" href="#">Sign Out</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="main-inner chat-layout">
+        <header class="chat-header">
+          <h1 class="page-title">Chat</h1>
+          <p class="page-subtitle">Communicate with volunteers and admin.</p>
+        </header>
+
+        <div class="chat-channel">
+          <strong>General Channel</strong>
+          <span></span>
+        </div>
+
+        <section class="chat-body">
+          <div>No messages yet.</div>
+        </section>
+
+        <form class="chat-input-area">
+          <input class="chat-input" type="text" placeholder="Type a message..." />
+          <button class="send-btn" type="submit" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
