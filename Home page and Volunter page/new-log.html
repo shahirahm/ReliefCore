@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Activity Log | Volunteer Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    <!-- Sidebar (Same as Dashboard) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span>🛟</span> Relief Network
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="dashboard.html" class="nav-item">
+          <i class="fa-solid fa-house"></i> Overview
+        </a>
+        <a href="new-log.html" class="nav-item active">
+          <i class="fa-solid fa-circle-plus"></i> New Log
+        </a>
+        <a href="dashboard.html#tasks" class="nav-item">
+          <i class="fa-solid fa-list-check"></i> My Tasks
+        </a>
+        <a href="dashboard.html#supplies" class="nav-item">
+          <i class="fa-solid fa-box-open"></i> Record Supplies
+        </a>
+        <a href="dashboard.html#reports" class="nav-item">
+          <i class="fa-solid fa-triangle-exclamation"></i> Field Issues
+        </a>
+        <a href="dashboard.html#chat" class="nav-item">
+          <i class="fa-solid fa-message"></i> Messages
+        </a>
+      </nav>
+      
+      <div class="user-profile">
+        <div class="avatar">S</div>
+        <div class="user-info">
+          <h4>Sifat</h4>
+          <p>Volunteer</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div>
+          <h1>Create New Activity Log</h1>
+          <p>Record your field activities to keep the camp updated.</p>
+        </div>
+        <a href="dashboard.html" class="btn btn-outline">
+          <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+        </a>
+      </div>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <form id="newLogForm">
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+            <div class="form-group">
+              <label>Log Type</label>
+              <select required>
+                <option value="">Select Type</option>
+                <option>Aid Distribution</option>
+                <option>Damage Assessment</option>
+                <option>Medical Assistance</option>
+                <option>Camp Maintenance</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" placeholder="e.g. Block D, Section 2" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Title of Activity</label>
+            <input type="text" placeholder="e.g. Morning Food Distribution" required>
+          </div>
+
+          <div class="form-group">
+            <label>Detailed Description</label>
+            <textarea rows="6" placeholder="What was achieved? Any challenges faced?" required></textarea>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+            <div class="form-group">
+              <label>Number of Families Assisted</label>
+              <input type="number" placeholder="0">
+            </div>
+            <div class="form-group">
+              <label>Supplies Used (Optional)</label>
+              <input type="text" placeholder="e.g. 50 rice bags, 20 water cartons">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Upload Field Photo (Optional)</label>
+            <div style="border: 2px dashed var(--line); padding: 30px; border-radius: 12px; text-align: center; color: var(--muted);">
+              <i class="fa-solid fa-cloud-arrow-up" style="font-size: 32px; margin-bottom: 12px; color: var(--gold);"></i>
+              <p>Click to upload or drag and drop</p>
+              <input type="file" style="display: none;" id="fileInput">
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 32px;">
+            <button type="submit" class="btn btn-primary" style="flex: 1; padding: 16px;">Submit Log Entry</button>
+            <button type="reset" class="btn btn-outline" style="padding: 16px;">Clear</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="successMessage" style="display: none; margin-top: 24px; text-align: center; padding: 20px; background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 12px; color: var(--gold);">
+        <i class="fa-solid fa-circle-check" style="margin-right: 8px;"></i>
+        Log entry submitted successfully! Redirecting to dashboard...
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('newLogForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = this;
+      const success = document.getElementById('successMessage');
+      
+      form.style.opacity = '0.5';
+      form.style.pointerEvents = 'none';
+      success.style.display = 'block';
+      
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

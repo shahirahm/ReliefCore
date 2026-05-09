@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Portal | Disaster Relief Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(110,168,254,.08), transparent),
+        radial-gradient(ellipse 60% 50% at 80% 30%, rgba(212,175,106,.06), transparent),
+        radial-gradient(ellipse 70% 60% at 50% 100%, rgba(167,139,250,.05), transparent);
+    }
+    .auth-card {
+      backdrop-filter: blur(20px);
+      background: rgba(20, 27, 45, 0.7);
+    }
+  </style>
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <a href="Homepage.html" class="sidebar-logo" style="justify-content: center; margin-bottom: 32px; text-decoration: none; color: var(--gold);">
+      <span>🛟</span> Disaster Relief Network
+    </a>
+    
+    <div style="position: absolute; top: 24px; left: 24px;">
+      <a href="Homepage.html" style="color: var(--muted); font-size: 14px; display: flex; align-items: center; gap: 8px;">
+        ← Back to Home
+      </a>
+    </div>
+    
+    <div id="loginForm">
+      <h2>Welcome Back</h2>
+      <p>Log in to access your volunteer dashboard and assigned tasks.</p>
+      
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="name@example.com">
+      </div>
+      
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••">
+      </div>
+      
+      <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='dashboard.html'">Sign In</button>
+      
+      <p style="margin-top: 24px; font-size: 14px;">
+        New volunteer? <a href="#" onclick="toggleAuth()" style="color: var(--gold); font-weight: 600;">Register here</a>
+      </p>
+    </div>
+
+    <div id="registerForm" style="display: none;">
+      <h2>Join the Mission</h2>
+      <p>Register as a volunteer to help affected communities.</p>
+      
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="John Doe">
+      </div>
+      
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="name@example.com">
+      </div>
+      
+      <div class="form-group">
+        <label>Skills / Expertise</label>
+        <select>
+          <option>First Aid</option>
+          <option>Logistics</option>
+          <option>Food Distribution</option>
+          <option>Search & Rescue</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••">
+      </div>
+      
+      <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='dashboard.html'">Register Now</button>
+      
+      <p style="margin-top: 24px; font-size: 14px;">
+        Already have an account? <a href="#" onclick="toggleAuth()" style="color: var(--gold); font-weight: 600;">Sign in here</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function toggleAuth() {
+      const login = document.getElementById('loginForm');
+      const register = document.getElementById('registerForm');
+      if (login.style.display === 'none') {
+        login.style.display = 'block';
+        register.style.display = 'none';
+      } else {
+        login.style.display = 'none';
+        register.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
