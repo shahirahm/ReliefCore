@@ -55,6 +55,7 @@ body {
 }
 
 .nav-menu a.active { color: var(--gold); border-left: 2px solid var(--gold); padding-left: 10px; }
+.nav-menu a:hover { color: var(--gold); }
 
 /* UPDATED SIDEBAR UI FROM SCREENSHOT */
 .hero-button {

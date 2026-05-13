@@ -1,0 +1,183 @@
+/* Color Palette */
+:root {
+    --bg-black: #080808;
+    --sidebar-black: #000000;
+    --gold: #c4a059;
+    --dark-gold: #8a6d3b;
+    --text-gray: #777777;
+    --border: #222222;
+    --msg-incoming: #141414;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-black);
+    border-right: 1px solid var(--border);
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-section { margin-bottom: 50px; }
+.logo { font-size: 1.5rem; letter-spacing: 2px; }
+.logo span { color: var(--gold); }
+.sub-logo { font-size: 0.6rem; letter-spacing: 5px; color: var(--text-gray); }
+
+.donor-card {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.donor-card label { font-size: 0.65rem; color: var(--text-gray); }
+.id-number { color: var(--gold); font-weight: bold; margin: 5px 0; }
+.donor-name { font-size: 1rem; margin-bottom: 5px; }
+.donor-tier { font-size: 0.6rem; color: var(--text-gray); }
+
+.nav-links a {
+    display: block;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 15px 0;
+    letter-spacing: 1px;
+}
+
+.nav-links a.active { color: var(--gold); }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active::before { content: "• "; margin-right: 5px; }
+
+.hero-btn {
+    margin-top: auto;
+    background-color: var(--gold);
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+.main-workspace {
+    flex: 1;
+    position: relative;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* THE BIG HEADER */
+.giant-header {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03); /* Faint, tech-style watermark */
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+/* CHAT BOX */
+.chat-interface {
+    width: 100%;
+    max-width: 900px;
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+}
+
+.node-info { display: flex; align-items: center; gap: 15px; }
+.shield-icon { 
+    border: 1px solid var(--gold); 
+    color: var(--gold); 
+    padding: 10px; 
+    border-radius: 8px; 
+}
+
+.status { color: #00ff88; font-size: 0.65rem; display: block; }
+
+.chat-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.timestamp { text-align: center; font-size: 0.7rem; color: #444; margin-bottom: 30px; }
+
+.message { max-width: 70%; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 0.9rem; }
+.incoming { background: var(--msg-incoming); border: 1px solid var(--border); align-self: flex-start; }
+.outgoing { background: var(--gold); color: #000; align-self: flex-end; margin-left: auto; }
+
+/* FOOTER / INPUT */
+.chat-footer { padding: 20px; }
+.input-container {
+    background: #111;
+    border: 1px solid var(--border);
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.input-container input {
+    background: transparent;
+    border: none;
+    color: white;
+    flex: 1;
+    outline: none;
+}
+
+.send-btn { background: none; border: none; color: var(--gold); cursor: pointer; }
+
+.security-disclaimer {
+    text-align: center;
+    font-size: 0.6rem;
+    color: #333;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.status-bar {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.65rem;
+    color: #444;
+}
