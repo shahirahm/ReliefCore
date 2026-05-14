@@ -1,0 +1,206 @@
+/* --- Global Styles --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* White background as requested */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Container for centering and spacing content */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Red headings style */
+.red-heading {
+    color: #cc0000;
+    border-bottom: 2px solid #cc0000; /* Red border for heading */
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.highlight-red {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+/* --- 1. Header Section --- */
+.main-header {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: white;
+}
+
+.main-header h1 {
+    color: #cc0000;
+    margin: 0;
+    font-size: 28px;
+}
+
+/* --- 2. Navigation Bar --- */
+.navbar {
+    background-color: #cc0000;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows links to wrap on small screens */
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.navbar a:hover {
+    background-color: #990000; /* Darker red on hover */
+    border-radius: 4px;
+}
+
+/* --- Basic Cards / Boxes --- */
+.card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #cc0000; /* Red borders for boxes */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* --- 4. Form Section --- */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cc0000; /* Red border for inputs */
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    font-family: Arial, sans-serif;
+}
+
+/* Primary Red Button */
+.btn-primary {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%; /* Full width button */
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #990000; /* Slightly darker red */
+}
+
+/* --- 5. & 6. Status and Camp Details --- */
+.details-box p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+/* --- 7. Support Chat --- */
+.chat-box {
+    border: 1px solid #cc0000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.chat-history {
+    background-color: #fffafb; /* Very light red/white tint */
+    padding: 15px;
+    height: 200px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 75%;
+}
+
+.incoming {
+    background-color: #eeeeee;
+    color: #333;
+}
+
+.outgoing {
+    background-color: #ffcccc; /* Light red for outgoing messages */
+    color: #333;
+    margin-left: auto; /* Pushes the message to the right side */
+    text-align: right;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #cc0000;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.chat-input button {
+    border-radius: 0;
+    width: 100px; /* Fixed width for send button */
+}
+
+/* --- 8. Footer Section --- */
+.main-footer {
+    background-color: #cc0000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* --- Responsive Layout for Mobile --- */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+    
+    .navbar li {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .main-header h1 {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affected People Portal | Disaster Relief System</title>
+    <!-- Link to our simple CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header Section -->
+    <header class="main-header">
+        <h1>Disaster Relief Camp & Volunteer Coordination System</h1>
+    </header>
+
+    <!-- 2. Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#status">Relief Status</a></li>
+            <li><a href="#camp">Camps</a></li>
+            <li><a href="#chat">Support Chat</a></li>
+            <li><a href="#" class="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container for the page content -->
+    <div class="container">
+        
+        <!-- 3. Welcome Section -->
+        <section class="welcome-section card">
+            <h2 class="red-heading">Welcome to the Affected People Portal</h2>
+            <p>We are here to support you during these difficult times. Please use this portal to request help, track your relief status, or connect with your assigned camp.</p>
+        </section>
+
+        <!-- 4. Submit Help Request Form -->
+        <section class="form-section card" id="request">
+            <h3 class="red-heading">Submit Help Request</h3>
+            
+            <form action="#" method="post">
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="helpType">Type of Help Needed</label>
+                    <select id="helpType" name="helpType" required>
+                        <option value="">--Select Help Type--</option>
+                        <option value="food">Food</option>
+                        <option value="medical">Medical Assistance</option>
+                        <option value="shelter">Shelter</option>
+                        <option value="rescue">Rescue</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="message">Message Box</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary">Submit Request</button>
+            </form>
+        </section>
+
+        <!-- 5. View Relief Status Section -->
+        <section class="status-section card" id="status">
+            <h3 class="red-heading">View Relief Status</h3>
+            <div class="details-box">
+                <p><strong>Registration ID:</strong> REG-94821</p>
+                <p><strong>Request Status:</strong> <span class="highlight-red">Processing</span></p>
+                <p><strong>Food Support:</strong> Approved (Delivery Tomorrow)</p>
+                <p><strong>Medical Support:</strong> Pending</p>
+                <p><strong>Shelter Availability:</strong> Available at Central Camp</p>
+            </div>
+        </section>
+
+        <!-- 6. Assigned Camp Information -->
+        <section class="camp-section card" id="camp">
+            <h3 class="red-heading">Assigned Camp Information</h3>
+            <div class="details-box">
+                <p><strong>Camp Name:</strong> City Center Relief Camp</p>
+                <p><strong>Camp Location:</strong> Main Square, Downtown</p>
+                <p><strong>Contact Number:</strong> +1-800-555-0199</p>
+                <p><strong>Available Facilities:</strong> Food, First Aid, Sleeping Mats, Clean Water</p>
+            </div>
+        </section>
+
+        <!-- 7. Support Chat Section -->
+        <section class="chat-section card" id="chat">
+            <h3 class="red-heading">Support Chat</h3>
+            
+            <div class="chat-box">
+                <!-- Chat History Area -->
+                <div class="chat-history">
+                    <div class="chat-message incoming">
+                        <strong>Support:</strong> Hello! How can we help you today?
+                    </div>
+                    <div class="chat-message outgoing">
+                        <strong>You:</strong> Is there baby food available at the camp?
+                    </div>
+                </div>
+                
+                <!-- Chat Input Area -->
+                <div class="chat-input">
+                    <input type="text" placeholder="Type your message here...">
+                    <button type="button" class="btn-primary">Send</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 8. Footer Section -->
+    <footer class="main-footer">
+        <p>Emergency Relief Support System</p>
+    </footer>
+
+</body>
+</html>
