@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Camp & Volunteer Coordination System</title>
+    
+    <!-- Meta tags for basic SEO -->
+    <meta name="description" content="Official portal of the Disaster Relief Camp & Volunteer Coordination System. Request emergency relief, check request status, find camps, and view emergency hotlines.">
+    <meta name="keywords" content="disaster relief, volunteer coordination, emergency assistance, flood rescue, shelter camp">
+    
+    <!-- Link to external styling sheet -->
+    <link rel="stylesheet" href="style.css?v=1.3">
+</head>
+<body>
+
+    <!-- ==========================================
+       1. WEBSITE HEADER & NAVIGATION BAR
+       ========================================== -->
+    <header class="header">
+        <div class="container navbar">
+            <!-- Logo / Brand Area -->
+            <a href="index.html" class="logo" id="site-logo">
+                <!-- SVG Icon for disaster relief (Cross & Shield/Heart) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <line x1="12" y1="8" x2="12" y2="16"/>
+                    <line x1="8" y1="12" x2="16" y2="12"/>
+                </svg>
+                <div class="logo-text">
+                    DISASTER RELIEF
+                    <span>Camp & Volunteer Coordination System</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <!-- Placeholder link: Will be connected to the external home page by team member -->
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#request-form" class="nav-link active">Request Help</a></li>
+                    <li><a href="#status-check" class="nav-link">Check Status</a></li>
+                    <li><a href="#camps" class="nav-link">Assigned Camps</a></li>
+                    <li><a href="#chat" class="nav-link">Support Desk</a></li>
+                </ul>
+            </nav>
+
+            <!-- Dedicated Emergency Action Button on Right -->
+            <div class="nav-actions">
+                <a href="#emergency" class="btn-emergency">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>Emergency Hotline: 1090</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       2. PORTAL HEADER SECTION (BREADCRUMB & METRICS)
+       ========================================== -->
+    <section class="portal-header" id="portal-header">
+        <div class="container portal-header-grid">
+            <div class="portal-header-text">
+                <div class="breadcrumb">
+                    <a href="#">Home</a> <span class="divider">/</span> <span class="active-page">Disaster Relief Camp & Volunteer Coordination System</span>
+                </div>
+                <h1>Disaster Relief Camp & Volunteer Coordination System</h1>
+                <p>Submit emergency relief requests, track your application status in real-time, access camp locations, and coordinate with support desk volunteers.</p>
+            </div>
+            <!-- Dynamic Stats metrics to present a highly professional, dedicated portal layout -->
+            <div class="portal-header-stats">
+                <div class="stat-card">
+                    <span class="stat-num">3</span>
+                    <span class="stat-label">Active Camps</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">24/7</span>
+                    <span class="stat-label">Support Helpdesk</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       3. SUBMIT HELP REQUEST FORM SECTION
+       ========================================== -->
+    <section class="form-section py-80" id="request-form">
+        <div class="container">
+            <div class="section-title">
+                <h2>Request Emergency Assistance</h2>
+                <p>Please fill out this form accurately. Our relief teams and camp volunteers will respond as quickly as possible.</p>
+            </div>
+
+            <div class="card-container">
+                <!-- Placeholder container for submission responses (handled via JavaScript URL parser) -->
+                <div id="alert-container"></div>
+
+                <!-- Help Request Form -->
+                <form action="submit_request.php" method="POST">
+                    <div class="form-grid">
+                        
+                        <!-- Family Head Name -->
+                        <div class="form-group">
+                            <label for="head_name" class="form-label">Family Head Name *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                <input type="text" name="head_name" id="head_name" class="form-input" placeholder="e.g. Rahim Uddin" required>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="form-group">
+                            <label for="mobile" class="form-label">Mobile Number *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <input type="tel" name="mobile" id="mobile" class="form-input" placeholder="e.g. 01712345678" required 
+                                       pattern="^[0-9+]{11,15}$" title="Enter a valid mobile number (11 to 15 digits)">
+                            </div>
+                        </div>
+
+                        <!-- National ID Number (Optional) -->
+                        <div class="form-group">
+                            <label for="nid_no" class="form-label">National ID (NID) <span class="optional">(Optional)</span></label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                    <line x1="1" y1="10" x2="23" y2="10"/>
+                                </svg>
+                                <input type="text" name="nid_no" id="nid_no" class="form-input" placeholder="e.g. 1995123456789">
+                            </div>
+                        </div>
+
+                        <!-- Family Member Count -->
+                        <div class="form-group">
+                            <label for="member_count" class="form-label">Family Member Count *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <input type="number" name="member_count" id="member_count" class="form-input" placeholder="e.g. 4" min="1" required value="1">
+                            </div>
+                        </div>
+
+                        <!-- Disaster Type (Dropdown Selection) -->
+                        <div class="form-group">
+                            <label for="disaster_type" class="form-label">Disaster Type *</label>
+                            <select name="disaster_type" id="disaster_type" class="form-input" required>
+                                <option value="" disabled selected>-- Select Disaster Type --</option>
+                                <option value="Flood">Flood</option>
+                                <option value="Cyclone">Cyclone</option>
+                                <option value="Fire">Fire</option>
+                                <option value="Earthquake">Earthquake</option>
+                                <option value="Landslide">Landslide</option>
+                                <option value="River Erosion">River Erosion</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Help Needed (Dropdown Selection) -->
+                        <div class="form-group">
+                            <label for="help_needed" class="form-label">Primary Help Needed *</label>
+                            <select name="help_needed" id="help_needed" class="form-input" required>
+                                <option value="" disabled selected>-- Select Assistance Needed --</option>
+                                <option value="Food">Food</option>
+                                <option value="Medicine">Medicine</option>
+                                <option value="Shelter">Shelter</option>
+                                <option value="Rescue">Rescue</option>
+                                <option value="Water">Water</option>
+                                <option value="Clothing">Clothing</option>
+                                <option value="All In One">All In One</option>
+                            </select>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="form-group">
+                            <label for="address" class="form-label">Detailed Address *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <input type="text" name="address" id="address" class="form-input" placeholder="e.g. House 42, Ward 3, Sadar Sylhet" required>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group full-width">
+                            <label for="description" class="form-label">Describe Your Situation & Immediate Needs *</label>
+                            <textarea name="description" id="description" class="form-input" placeholder="Please explain how many people need help, any injuries, water levels, or immediate threats..." required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-group full-width" style="margin-top: 10px;">
+                            <button type="submit" class="btn btn-submit">
+                                Submit Assistance Request
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       4. VIEW RELIEF STATUS SECTION
+       ========================================== -->
+    <section class="status-section py-80" id="status-check">
+        <div class="container">
+            <div class="section-title">
+                <h2>View Relief Request Status</h2>
+                <p>Have you already submitted an assistance request? Enter your Request ID and registered mobile number below to view the latest status.</p>
+            </div>
+
+            <div class="status-check-grid">
+                <!-- Left Details Box -->
+                <div class="status-info-side">
+                    <h3>Track Your Application</h3>
+                    <p>When a relief request is submitted, it goes into our coordination database. Volunteers and administrators review the request and designate local camps, dispatch supplies, or coordinate safety rescue missions.</p>
+                    
+                    <div style="display:flex; flex-direction:column; gap:15px; margin-top:25px;">
+                        <div style="display:flex; gap:15px; align-items:center;">
+                            <div style="width:36px; height:36px; border-radius:50%; background-color:var(--primary-light); color:var(--primary-color); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem;">1</div>
+                            <span style="font-weight:600; font-size:0.95rem;">Request Registered (Status: Pending)</span>
+                        </div>
+                        <div style="display:flex; gap:15px; align-items:center;">
+                            <div style="width:36px; height:36px; border-radius:50%; background-color:var(--primary-light); color:var(--primary-color); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem;">2</div>
+                            <span style="font-weight:600; font-size:0.95rem;">Assigned to Relief Camps (Status: In Progress/Assigned)</span>
+                        </div>
+                        <div style="display:flex; gap:15px; align-items:center;">
+                            <div style="width:36px; height:36px; border-radius:50%; background-color:var(--primary-light); color:var(--primary-color); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:0.9rem;">3</div>
+                            <span style="font-weight:600; font-size:0.95rem;">Relief Support Provided (Status: Resolved)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Wrapper -->
+                <div class="status-form-wrapper">
+                    <form action="check_status.php" method="GET">
+                        <div class="form-group">
+                            <label for="request_id" class="form-label">Request ID *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"/>
+                                </svg>
+                                <input type="number" name="id" id="request_id" class="form-input" placeholder="e.g. 104" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="status_mobile" class="form-label">Registered Mobile Number *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <input type="tel" name="mobile" id="status_mobile" class="form-input" placeholder="e.g. 01712345678" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-submit" style="margin-top:10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px; display:inline-block; vertical-align:middle;">
+                                <circle cx="11" cy="11" r="8"/>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            </svg>
+                            Track Request Status
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       5. ASSIGNED CAMP INFORMATION (CARDS)
+       ========================================== -->
+    <section class="camp-section py-80" id="camps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Active Disaster Relief Camps</h2>
+                <p>Here are the currently active local relief camps coordinating rescue and supply distribution. You can reach their hotlines directly.</p>
+            </div>
+
+            <div class="camp-grid">
+                
+                <!-- Camp Card 1 -->
+                <div class="camp-card">
+                    <h3>Sylhet Model High School Camp</h3>
+                    
+                    <div class="camp-info-row">
+                        <!-- Location Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <p><strong>Location:</strong> Sadar Bazar, Sylhet District</p>
+                    </div>
+
+                    <div class="camp-info-row">
+                        <!-- Phone Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <p><strong>Contact Hotline:</strong> +880 1712 345678</p>
+                    </div>
+
+                    <div class="camp-services">
+                        <h4>Available Services:</h4>
+                        <div class="service-badges">
+                            <span class="service-badge">Medical Care</span>
+                            <span class="service-badge">Safe Water</span>
+                            <span class="service-badge">Cooked Meals</span>
+                            <span class="service-badge">Shelter</span>
+                        </div>
+                    </div>
+
+                    <!-- Occupied Capacity Meter Dashboard Item -->
+                    <div class="camp-capacity">
+                        <div class="capacity-labels">
+                            <span>Camp Capacity</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="capacity-bar">
+                            <div class="capacity-fill" style="width: 85%;"></div>
+                        </div>
+                        <span class="capacity-details">425 / 500 Displaced Occupants</span>
+                    </div>
+                </div>
+
+                <!-- Camp Card 2 -->
+                <div class="camp-card">
+                    <h3>Cox's Bazar College Shelter</h3>
+                    
+                    <div class="camp-info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <p><strong>Location:</strong> College Road, Cox's Bazar</p>
+                    </div>
+
+                    <div class="camp-info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <p><strong>Contact Hotline:</strong> +880 1812 345678</p>
+                    </div>
+
+                    <div class="camp-services">
+                        <h4>Available Services:</h4>
+                        <div class="service-badges">
+                            <span class="service-badge">Emergency Rescue</span>
+                            <span class="service-badge">Dry Food Packs</span>
+                            <span class="service-badge">Temporary Shelter</span>
+                            <span class="service-badge">First Aid</span>
+                        </div>
+                    </div>
+
+                    <!-- Occupied Capacity Meter Dashboard Item -->
+                    <div class="camp-capacity">
+                        <div class="capacity-labels">
+                            <span>Camp Capacity</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="capacity-bar">
+                            <div class="capacity-fill" style="width: 60%; background-color: var(--success-color);"></div>
+                        </div>
+                        <span class="capacity-details">240 / 400 Displaced Occupants</span>
+                    </div>
+                </div>
+
+                <!-- Camp Card 3 -->
+                <div class="camp-card">
+                    <h3>Satkhira Primary Camp</h3>
+                    
+                    <div class="camp-info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <p><strong>Location:</strong> Shamnagar Upazila, Satkhira</p>
+                    </div>
+
+                    <div class="camp-info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <p><strong>Contact Hotline:</strong> +880 1912 345678</p>
+                    </div>
+
+                    <div class="camp-services">
+                        <h4>Available Services:</h4>
+                        <div class="service-badges">
+                            <span class="service-badge">Cooked Food</span>
+                            <span class="service-badge">Purification Kits</span>
+                            <span class="service-badge">Blankets</span>
+                            <span class="service-badge">Child Support</span>
+                        </div>
+                    </div>
+
+                    <!-- Occupied Capacity Meter Dashboard Item -->
+                    <div class="camp-capacity">
+                        <div class="capacity-labels">
+                            <span>Camp Capacity</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="capacity-bar">
+                            <div class="capacity-fill" style="width: 95%;"></div>
+                        </div>
+                        <span class="capacity-details">285 / 300 Displaced Occupants (Almost Full)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       6. CHAT WITH CAMP SUPPORT (FRONTEND UI)
+       ========================================== -->
+    <section class="chat-section py-80" id="chat">
+        <div class="container">
+            <div class="section-title">
+                <h2>Chat with Camp Support</h2>
+                <p>Have quick questions about relief status, camp openings, or volunteer services? Ask our online assistant or available camp support coordinators below.</p>
+            </div>
+
+            <div class="chat-wrapper">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-agent-info">
+                        <div class="agent-avatar">CR</div>
+                        <div class="agent-status">
+                            <h4>Camp Relief Coordinator</h4>
+                            <p><span class="status-dot"></span> Online (Relief Support Desk)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Body -->
+                <div class="chat-body" id="chat-body">
+                    <!-- Message 1 (Incoming) -->
+                    <div class="chat-message incoming">
+                        Hello! Welcome to the Disaster Relief Support desk. How can we help you today?
+                        <span class="message-time">7:15 PM</span>
+                    </div>
+                    <!-- Message 2 (Incoming) -->
+                    <div class="chat-message incoming">
+                        If you need immediate help, please fill out the <strong>Emergency Assistance Form</strong> above. For check status updates, feel free to ask here!
+                        <span class="message-time">7:16 PM</span>
+                    </div>
+                </div>
+
+                <!-- Chat Input Section -->
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" class="chat-input" placeholder="Type your message here..." onkeypress="handleChatKey(event)">
+                    <button class="btn-send" id="btn-send" onclick="sendChatMessage()" aria-label="Send Message">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       7. EMERGENCY INFORMATION SECTION
+       ========================================== -->
+    <section class="emergency-section py-80" id="emergency">
+        <div class="container">
+            <div class="section-title">
+                <h2>Emergency & Hotline Contacts</h2>
+                <p>In life-threatening situations, please call the official emergency responders immediately.</p>
+            </div>
+
+            <div class="emergency-grid">
+                
+                <!-- Left: Emergency Hotlines -->
+                <div class="hotline-wrapper">
+                    <h3>Official Disaster Hotlines</h3>
+                    <div class="hotline-list">
+                        
+                        <!-- Hotline 1 -->
+                        <div class="hotline-card">
+                            <div class="hotline-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="hotline-info">
+                                <h4>National Emergency Service</h4>
+                                <span class="hotline-number">999</span>
+                            </div>
+                        </div>
+
+                        <!-- Hotline 2 -->
+                        <div class="hotline-card">
+                            <div class="hotline-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 22 22 22"/>
+                                    <line x1="12" y1="9" x2="12" y2="13"/>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                </svg>
+                            </div>
+                            <div class="hotline-info">
+                                <h4>National Disaster Information Hotline</h4>
+                                <span class="hotline-number">1090</span>
+                            </div>
+                        </div>
+
+                        <!-- Hotline 3 -->
+                        <div class="hotline-card">
+                            <div class="hotline-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="hotline-info">
+                                <h4>Fire Service & Civil Defense</h4>
+                                <span class="hotline-number">16163</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Safety Instructions Accordion -->
+                <div class="safety-wrapper">
+                    <h3>Disaster Safety Instructions</h3>
+                    <div class="instructions-accordion">
+                        
+                        <!-- Flood Instruction -->
+                        <div class="instruction-item">
+                            <details>
+                                <summary class="instruction-trigger">
+                                    <span>Flood Preparedness Actions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"/>
+                                    </svg>
+                                </summary>
+                                <div class="instruction-content">
+                                    <p>1. Move valuable items, livestock, and document packets to higher floors or platforms.</p>
+                                    <p style="margin-top: 5px;">2. Stock up on water purification tablets, dry foods, and matches.</p>
+                                    <p style="margin-top: 5px;">3. Never touch wet electrical sockets or walk through moving water.</p>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Cyclone Instruction -->
+                        <div class="instruction-item">
+                            <details>
+                                <summary class="instruction-trigger">
+                                    <span>Cyclone Preparedness Actions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"/>
+                                    </svg>
+                                </summary>
+                                <div class="instruction-content">
+                                    <p>1. Move to the nearest concrete Cyclone Shelter when signals reach levels 4 or higher.</p>
+                                    <p style="margin-top: 5px;">2. Turn off the main electric switch and gas valves before leaving house.</p>
+                                    <p style="margin-top: 5px;">3. Keep emergency radios and flashlights ready in dry plastic bags.</p>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Earthquake Instruction -->
+                        <div class="instruction-item">
+                            <details>
+                                <summary class="instruction-trigger">
+                                    <span>Earthquake Survival Actions</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"/>
+                                    </svg>
+                                </summary>
+                                <div class="instruction-content">
+                                    <p>1. <strong>DROP, COVER, HOLD ON:</strong> Drop to hands and knees, get under sturdy furniture, and cover your head.</p>
+                                    <p style="margin-top: 5px;">2. Stay clear of windows, tall wardrobes, and glass structures.</p>
+                                    <p style="margin-top: 5px;">3. Do not run out of building doorways; falling brickwork/debris are high risks.</p>
+                                </div>
+                            </details>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       8. FOOTER SECTION
+       ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Brand Description -->
+                <div class="footer-desc">
+                    <h3>Disaster Relief Camp System</h3>
+                    <p>Providing a rapid response portal for victims of natural crises. Our system acts as the digital liaison between displaced individuals, active relief camps, and volunteer organizations.</p>
+                </div>
+                <!-- Quick Navigation -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Back to Top</a></li>
+                        <li><a href="#request-form">Assistance Form</a></li>
+                        <li><a href="#status-check">Track Request</a></li>
+                        <li><a href="#camps">Relief Camps</a></li>
+                        <li><a href="#emergency">Emergency Numbers</a></li>
+                    </ul>
+                </div>
+                <!-- Contact info -->
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        info@disasterrelief.gov.bd
+                    </p>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Toll-free Hotline: 1090
+                    </p>
+                    <p style="font-size:0.8rem; margin-top:15px; color:#8e8ea2;">Emergency Response Center, Dhaka, Bangladesh</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Disaster Relief Camp & Volunteer Coordination System. All rights reserved.</p>
+                <p style="font-size: 0.8rem;">Developed under national disaster mitigation initiatives.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+       9. JAVASCRIPT FOR DYNAMIC FRONTEND INTERACTION
+       ========================================== -->
+    <script>
+        // --- 1. Responsive Navbar Hamburger Toggle ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            
+            // Adjust Hamburger lines to turn into an 'X'
+            const spans = menuToggle.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when links are clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+
+        // --- 2. Interactive Mock Chat with Coordinators ---
+        function getFormattedTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // hour 0 is 12
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            return hours + ':' + minutes + ' ' + ampm;
+        }
+
+        function handleChatKey(event) {
+            if (event.key === 'Enter') {
+                sendChatMessage();
+            }
+        }
+
+        function sendChatMessage() {
+            const chatInput = document.getElementById('chat-input');
+            const messageText = chatInput.value.trim();
+            if (messageText === '') return;
+
+            const chatBody = document.getElementById('chat-body');
+            const time = getFormattedTime();
+
+            // Append Outgoing Message (User)
+            const outgoingMessage = document.createElement('div');
+            outgoingMessage.className = 'chat-message outgoing';
+            outgoingMessage.innerHTML = `${escapeHTML(messageText)}<span class="message-time">${time}</span>`;
+            chatBody.appendChild(outgoingMessage);
+
+            // Clear Input and scroll chat to bottom
+            chatInput.value = '';
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            // Generate Mock Response from Camp Coordinator after 1 second
+            setTimeout(() => {
+                const incomingMessage = document.createElement('div');
+                incomingMessage.className = 'chat-message incoming';
+                
+                let responseText = "We have received your message. If this is an emergency, please use the hotline numbers. A nearby volunteer coordinator will verify your database details and update your request status page.";
+                
+                // Smart keyword matching responses
+                const lowerText = messageText.toLowerCase();
+                if (lowerText.includes('status') || lowerText.includes('track')) {
+                    responseText = "To track your relief status, please enter your Request ID and Mobile Number in the 'View Relief Status' section above.";
+                } else if (lowerText.includes('food') || lowerText.includes('water')) {
+                    responseText = "Our relief trucks are preparing dry foods, water bottles, and medicine packets. Volunteer teams at the assigned camps are distributing these packages daily.";
+                } else if (lowerText.includes('camp') || lowerText.includes('location')) {
+                    responseText = "Currently, we have active shelters at Sylhet Model High School, Cox's Bazar College, and Satkhira Primary Camp. You can find their addresses and phone numbers under 'Active Disaster Relief Camps'.";
+                }
+
+                incomingMessage.innerHTML = `${responseText}<span class="message-time">${getFormattedTime()}</span>`;
+                chatBody.appendChild(incomingMessage);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
+        }
+
+        // Helper to escape HTML characters and prevent XSS in mock chat
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, 
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+
+        // --- 3. URL Parameter Query Checker for Form Submission ---
+        // Dynamically displays a success alert box if redirected with status=success
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('status') === 'success' && urlParams.get('id')) {
+                const id = urlParams.get('id');
+                const alertContainer = document.getElementById('alert-container');
+                if (alertContainer) {
+                    alertContainer.innerHTML = `
+                        <div class="alert alert-success" role="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px; flex-shrink:0;">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <div>
+                                <strong>Submission Successful!</strong><br>
+                                Thank you! Your help request has been successfully submitted.<br>
+                                <span style="font-size: 1.1rem; display: inline-block; margin-top: 10px;">
+                                    Your Request ID is: <strong>${escapeHTML(id)}</strong>
+                                </span><br>
+                                <small>Write this ID down. You can check the current status of your request below using this ID and your mobile number.</small>
+                            </div>
+                        </div>
+                    `;
+                    // Smoothly scroll to the form section where the alert is rendered
+                    document.getElementById('request-form').scrollIntoView();
+                }
+            } else if (urlParams.get('status') === 'error' && urlParams.get('msg')) {
+                const msg = urlParams.get('msg');
+                const alertContainer = document.getElementById('alert-container');
+                if (alertContainer) {
+                    alertContainer.innerHTML = `
+                        <div class="alert alert-error" role="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px; flex-shrink:0;">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                            <div>
+                                <strong>Submission Failed:</strong><br>
+                                ${escapeHTML(msg)}
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById('request-form').scrollIntoView();
+                }
+            }
+        });
+
+        // --- 4. Dynamic Navbar Highlighter (Scroll & Click) ---
+        const navMenuLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+        let isClickScrolling = false;
+        let clickScrollTimeout;
+
+        // Set the active class on target link
+        function setActiveNavLink(link) {
+            navMenuLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        }
+
+        // Add event listeners to each navigation link
+        navMenuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // If it is the placeholder Home link, prevent navigation but set active styling
+                if (link.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    setActiveNavLink(link);
+                    return;
+                }
+
+                // Otherwise set active styling
+                setActiveNavLink(link);
+
+                // Disable scroll triggers temporarily during smooth scroll transition
+                isClickScrolling = true;
+                clearTimeout(clickScrollTimeout);
+                clickScrollTimeout = setTimeout(() => {
+                    isClickScrolling = false;
+                }, 800);
+            });
+        });
+
+        // Add scroll window trigger
+        window.addEventListener('scroll', () => {
+            if (isClickScrolling) return;
+
+            // Highlight Home when near the top of the page
+            if (window.pageYOffset < 100) {
+                const homeLink = Array.from(navMenuLinks).find(link => link.getAttribute('href') === '#');
+                if (homeLink) {
+                    setActiveNavLink(homeLink);
+                    return;
+                }
+            }
+
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= (sectionTop - 180)) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            if (currentSectionId && currentSectionId !== 'portal-header') {
+                navMenuLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${currentSectionId}`) {
+                        setActiveNavLink(link);
+                    }
+                });
+            }
+        });
+
+        // Highlight matching link on page load hash
+        window.addEventListener('load', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                navMenuLinks.forEach(link => {
+                    if (link.getAttribute('href') === hash) {
+                        setActiveNavLink(link);
+                        const target = document.querySelector(hash);
+                        if (target) {
+                            setTimeout(() => {
+                                target.scrollIntoView({ behavior: 'smooth' });
+                            }, 100);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
