@@ -471,9 +471,8 @@ $affected_help_requests = $pdo->query("
 
     <section id="admin-affected-support" class="tab-section">
       <section class="card">
-        <h2>Affected People Support Access</h2>
-        <p class="anchor-note">Link affected users to registered family records and allow or block camp support chat.</p>
-
+        <h2>Affected People Support</h2>
+        
         <div class="table-wrap">
           <table>
             <thead>
@@ -749,9 +748,8 @@ $affected_help_requests = $pdo->query("
       <form class="card" method="POST" action="process_admin.php">
         <input type="hidden" name="action" value="record_donation_usage">
 
-        <h2>Record Where Donation Was Used</h2>
-        <p class="anchor-note">This makes usage visible to the donor under Track Donation Usage.</p>
-
+        <h2>Donation Usages</h2>
+    
         <div class="form-grid">
           <div>
             <label>Donation ID</label>

@@ -82,7 +82,6 @@ foreach ($donations as $d) {
     <div class="page-title">
       <span class="badge">Donor Dashboard</span>
       <h1>Donation Management</h1>
-      <p>Donate money or supplies, view Donation ID, see who donated what, track usage, and download receipts.</p>
     </div>
 
     <section id="donor-dashboard" class="tab-section active">
@@ -93,9 +92,7 @@ foreach ($donations as $d) {
         <div class="kpi"><span>Usage Records</span><strong><?php echo count($usage_rows); ?></strong></div>
       </div>
       <div class="card">
-        <h2>Donation ID Tracking</h2>
-        <p>Every donation receives a unique Donation ID, shown like <strong>#DON-00001</strong>.</p>
-      </div>
+        <h2>Donation ID Tracking</h2>      </div>
     </section>
 
     <section id="donor-donate" class="tab-section">
@@ -199,7 +196,6 @@ foreach ($donations as $d) {
     <section id="donor-usage" class="tab-section">
       <section class="card">
         <h2>Track Where Donations Were Used</h2>
-        <p class="anchor-note">Usage appears here after admin records where a Donation ID was used.</p>
         <div class="table-wrap">
           <table>
             <thead>

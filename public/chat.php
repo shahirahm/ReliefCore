@@ -8,10 +8,7 @@ require_login();
 $user_id = $_SESSION['user_id'];
 $role = current_user_role();
 
-/*
-  Added for affected-person controlled chat permission.
-  The old database will still work because this table is created if missing.
-*/
+
 $pdo->exec("
     CREATE TABLE IF NOT EXISTS affected_user_links (
         link_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,10 +22,7 @@ $pdo->exec("
     )
 ");
 
-/*
-  Auto-link affected user to family if phone number matches.
-  This helps affected people see relief status without manual DB edits.
-*/
+
 if ($role === 'Affected Person') {
     $stmt = $pdo->prepare("SELECT phone FROM users WHERE user_id=?");
     $stmt->execute([$user_id]);

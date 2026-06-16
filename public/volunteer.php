@@ -8,10 +8,7 @@ require_role(['Volunteer', 'Admin']);
 $user_id = $_SESSION['user_id'];
 $is_admin = current_user_role() === 'Admin';
 
-/*
-  Ensure volunteer delivery table exists.
-  This makes the feature work even if the user already imported the old database.
-*/
+
 $pdo->exec("
     CREATE TABLE IF NOT EXISTS volunteer_deliveries (
         delivery_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -51,10 +48,7 @@ if ($is_admin) {
     $tasks = $tasks_stmt->fetchAll();
 }
 
-/*
-  Camps where this volunteer has at least one assigned task.
-  Delivery recording is limited to these camps.
-*/
+
 if ($is_admin) {
     $assigned_camps = $pdo->query("
         SELECT DISTINCT rc.camp_id, rc.camp_name
@@ -73,9 +67,6 @@ if ($is_admin) {
     $assigned_camps = $stmt->fetchAll();
 }
 
-/*
-  Only stock items that already exist in camp_stock and have quantity > 0.
-*/
 if ($is_admin) {
     $stock_items = $pdo->query("
         SELECT cs.stock_id, cs.camp_id, cs.item_id, cs.quantity, rc.camp_name, si.item_name, si.item_category, si.unit
@@ -131,10 +122,7 @@ if ($is_admin) {
         ORDER BY request_id DESC
     ")->fetchAll();
 } else {
-    /*
-      The existing help_requests table does not have volunteer_id.
-      To keep the old DB compatible, volunteer name is stored in details.
-    */
+   
     $stmt = $pdo->prepare("
         SELECT *
         FROM help_requests

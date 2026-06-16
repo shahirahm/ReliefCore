@@ -8,10 +8,7 @@ require_role(['Camp Manager', 'Admin']);
 $user_id = $_SESSION['user_id'];
 $is_admin = current_user_role() === 'Admin';
 
-/*
-  Camp Manager should manage assigned relief camp only.
-  Admin can view all camps from this page for testing/demo.
-*/
+
 if ($is_admin) {
     $assigned_camps = $pdo->query("
         SELECT rc.*, dc.category_name, cl.location_name
@@ -155,7 +152,6 @@ foreach ($families as $f) {
     <div class="page-title">
       <span class="badge">Camp Manager Dashboard</span>
       <h1>Assigned Relief Camp Management</h1>
-      <p>Manage only your assigned relief camp: families, individuals, stock, volunteers, aid logs, reports and chat.</p>
     </div>
 
     <?php if(count($assigned_camps) > 1): ?>
@@ -197,7 +193,6 @@ foreach ($families as $f) {
 
         <div class="card">
           <h2>Camp Manager Actions</h2>
-          <p>Use the sidebar to register affected families or individuals, update stock, assign volunteers, record aid distributions and generate camp-wise report.</p>
           <a class="btn btn-outline" href="chat.php">Open Chat</a>
         </div>
       </div>

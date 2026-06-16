@@ -20,10 +20,7 @@ $pdo->exec("
     )
 ");
 
-/*
-  Auto-link affected person to registered family by phone number.
-  Admin can also link manually from Admin > Affected Support.
-*/
+
 $stmt = $pdo->prepare("SELECT full_name, email, phone FROM users WHERE user_id=?");
 $stmt->execute([$user_id]);
 $current_user = $stmt->fetch();
